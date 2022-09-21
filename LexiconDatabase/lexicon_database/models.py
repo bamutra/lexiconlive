@@ -55,9 +55,7 @@ class Lemma(models.Model):
     class Meta:
         managed = False
         db_table = 'lemma'
-
-
-class Lemmax(models.Model):
+class Lemma1(models.Model):
     lemma_id = models.IntegerField(primary_key=True)
     lemma = models.CharField(max_length=100, blank=True, null=True)
     lemma_diac = models.CharField(max_length=100, blank=True, null=True)
@@ -68,7 +66,6 @@ class Lemmax(models.Model):
     class Meta:
         managed = False
         db_table = 'lemma_1'
-
 
 class Nouns(models.Model):
     noun_id = models.AutoField(primary_key=True)
