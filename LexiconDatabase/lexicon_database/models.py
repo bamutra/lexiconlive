@@ -57,7 +57,7 @@ class Lemma(models.Model):
         db_table = 'lemma'
 
 
-class Lemma_1(models.Model):
+class Lemmax(models.Model):
     lemma_id = models.IntegerField(primary_key=True)
     lemma = models.CharField(max_length=100, blank=True, null=True)
     lemma_diac = models.CharField(max_length=100, blank=True, null=True)

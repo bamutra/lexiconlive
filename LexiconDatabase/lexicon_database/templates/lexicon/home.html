@@ -13,16 +13,16 @@
                 <th scope="col">lemma_1</th>
                 <th scope="col">syllable_structure</th>
                 <th scope="col">lang</th>
-                {% if lemma_1.tone %}
+                {% if lemmax.tone %}
                 <th scope="col">tone</th>
                 {% endif %}
-                {% if lemma_1.lemma_diac %}
+                {% if lemmax.lemma_diac %}
                 <th scope="col">lemma_diac</th>
                 {% endif %}
             </tr>
         </thead>
         <tbody>
-            {% for lemma in lemma_1 %}
+            {% for lemma in lemmax %}
             <tr>
                 <td>{{lemma.lemma_id}}</td>
                 <td>{{lemma.lemma}}</td>
