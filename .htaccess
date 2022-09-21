@@ -1,0 +1,10 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/gemcsbiz/lexicon.gemcs.biz/LexiconDatabase"
+PassengerBaseURI "/"
+PassengerPython "/home/gemcsbiz/virtualenv/lexicon.gemcs.biz/LexiconDatabase/3.10/bin/python"
+PassengerAppLogFile "/home/gemcsbiz/lexicon.gemcs.biz/LexiconDatabase"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
