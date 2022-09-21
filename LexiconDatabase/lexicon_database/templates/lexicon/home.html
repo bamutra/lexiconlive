@@ -22,17 +22,17 @@
             </tr>
         </thead>
         <tbody>
-            {% for lemma_1 in lemma_1 %}
+            {% for lemma in lemma_1 %}
             <tr>
-                <td>{{lemma_1.lemma_id}}</td>
-                <td>{{lemma_1.lemma}}</td>
-                <td>{{lemma_1.syllable_structure}}</td>
-                <td>{{lemma_1.lang}}</td>
-                {% if lemma_1.lemma_diac %}
-                <td>{{lemma_1.lemma_diac}}</td>
+                <td>{{lemma.lemma_id}}</td>
+                <td>{{lemma.lemma}}</td>
+                <td>{{lemma.syllable_structure}}</td>
+                <td>{{lemma.lang}}</td>
+                {% if lemma.lemma_diac %}
+                <td>{{lemma.lemma_diac}}</td>
                 {% endif %}
-                {% if lemma_1.tone %}
-                <td>{{lemma_1.tone}}</td>
+                {% if lemma.tone %}
+                <td>{{lemma.tone}}</td>
                 {% endif %}
             </tr>
             {% endfor %}
