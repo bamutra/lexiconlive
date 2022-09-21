@@ -6,13 +6,13 @@
 
     <!-- Start  Lemma_1   table definition -->
     <table class="table  table-bordered border-primary table-responsive  caption-top">
-        <caption class="fs-3 text-success">Table for Lemma_1</caption>
+        <caption class="fs-3 text-success">Table for Lemma_1 see</caption>
         <thead>
             <tr>
                 <th scope="col">lemma_id</th>
                 <th scope="col">lemma_1</th>
                 <th scope="col">syllable_structure</th>
-                <th scope="col">lang</th>
+                <th scope="col">langugauge</th>
                 <!-- {% if lemmax.tone %} -->
                 <th scope="col">tone</th>
                 <!-- {% endif %} -->
@@ -28,12 +28,12 @@
                 <td>{{lemma.lemma}}</td>
                 <td>{{lemma.syllable_structure}}</td>
                 <td>{{lemma.lang}}</td>
-                {% if lemma.lemma_diac %}
+                <!-- {% if lemma.lemma_diac %} -->
                 <td>{{lemma.lemma_diac}}</td>
-                {% endif %}
-                {% if lemma.tone %}
+                <!-- {% endif %} -->
+                <!-- {% if lemma.tone %} -->
                 <td>{{lemma.tone}}</td>
-                {% endif %}
+                <!-- {% endif %} -->
             </tr>
             {% endfor %}
         </tbody>
