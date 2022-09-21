@@ -2,4 +2,4 @@ import os
 import sys
 
 
-from LexiconDatabas.wsgi import application
+from LexiconDatabase.wsgi import application
