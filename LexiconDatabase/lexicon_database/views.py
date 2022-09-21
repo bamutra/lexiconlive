@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import EngDefn, Lemma,Adjective,Adverb,Pos,Verb,Nouns
+from .models import EngDefn, Lemma,Adjective,Adverb, Lemma_1,Pos,Verb,Nouns
 from .forms import LemmaForm 
 from django.http import HttpResponseRedirect
 
@@ -122,6 +122,7 @@ def Search(request):
 
 def homepage(request):
     lemma = Lemma.objects.all()[:5]
+    lemma_1 = Lemma_1.objects.all()[:5]
     engdfn = EngDefn.objects.all()[:5]
     noun = Nouns.objects.all()[:5]
     adjective = Adjective.objects.all()[:5]
@@ -130,6 +131,7 @@ def homepage(request):
     pos = Pos.objects.all()[:5]
     context = {
     'lemma': lemma,
+    'lemm_1,': lemma_1,
     'engdfn': engdfn, 
     'noun': noun,
     'adjective': adjective,

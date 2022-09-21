@@ -57,6 +57,19 @@ class Lemma(models.Model):
         db_table = 'lemma'
 
 
+class Lemma_1(models.Model):
+    lemma_id = models.IntegerField(primary_key=True)
+    lemma = models.CharField(max_length=100, blank=True, null=True)
+    lemma_diac = models.CharField(max_length=100, blank=True, null=True)
+    syllable_structure = models.CharField(max_length=200, blank=True, null=True)
+    tone = models.CharField(max_length=100, blank=True, null=True)
+    lang = models.CharField(max_length=3, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'lemma_1'
+
+
 class Nouns(models.Model):
     noun_id = models.AutoField(primary_key=True)
     lemma = models.ForeignKey(Lemma, on_delete=models.CASCADE)
