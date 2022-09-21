@@ -131,7 +131,7 @@ def homepage(request):
     pos = Pos.objects.all()[:5]
     context = {
     'lemma': lemma,
-    'lemm_1,': lemma_1,
+    'lemmax,': lemmax,
     'engdfn': engdfn, 
     'noun': noun,
     'adjective': adjective,
