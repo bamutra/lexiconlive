@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+               <h2 class="mt-3">Tables in Runyankole - Rukiga Lexicon</h2>
+ {% if request.user.is_authenticated %}
+        <!-- Start  Lemma table definition -->
+        <table class="table  table-responsive  caption-top table-hover">
+            <caption class="fs-3 text-success">Table for Lemma</caption>
+            <thead>
+                <tr>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">lemma</th>
+                    <th scope="col">syllable_structure</th>
+                    <th scope="col">lang</th>
+                    {% comment %} {% if lemma.tone %} {% endcomment %}
+                    <th scope="col">tone</th>
+                    {% comment %} {% endif %} {% endcomment %}
+                    {% comment %} {% if lemma.lemma_diac %} {% endcomment %}
+                    <th scope="col">lemma_diac</th>
+                    {% comment %} {% endif %} {% endcomment %}
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lemma in lemma %}
+                <tr>
+                    <td>{{lemma.lemma_id}}</td>
+                    <td>{{lemma.lemma}}</td>
+                    <td>{{lemma.syllable_structure}}</td>
+                    <td>{{lemma.lang}}</td>
+                    {% comment %} {% if lemma.lemma_diac %} {% endcomment %}
+                    <td>{{lemma.lemma_diac}}</td>
+                    {% comment %} {% endif %} {% endcomment %}
+                    {% comment %} {% if lemma.tone %} {% endcomment %}
+                    <td>{{lemma.tone}}</td>
+                    {% comment %} {% endif %} {% endcomment %}
+                    <td class="d-flex justify-content-end" ><a href="{% url 'update_lemma' lemma_id=lemma.lemma_id %}" class='btn btn-sm btn-primary mx-2'>Update</a> <a href="{% url 'lemma' lemma_id=lemma.lemma_id %}" class='btn btn-sm btn-danger'>Delete</a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+         {% endif %}
+        <!--  End Lemma table definition -->
+        
+
+   {% endblock  %}
+
+
+

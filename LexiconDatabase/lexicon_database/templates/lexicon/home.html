@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container my-5">
+
+        <h2>Tables in Runyankole - Rukiga Lexicon</h2>
+
+        <!-- Start  Lemma table definition -->
+        <table class="table  table-bordered border-primary table-responsive  caption-top">
+            <caption class="fs-3 text-success">Table for Lemma</caption>
+            <thead>
+                <tr>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">lemma</th>
+                    <th scope="col">syllable_structure</th>
+                    <th scope="col">lang</th>
+                    {% if lemma.tone %}
+                    <th scope="col">tone</th>
+                    {% endif %}
+                    {% if lemma.lemma_diac %}
+                    <th scope="col">lemma_diac</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for lemma in lemma %}
+                <tr>
+                    <td>{{lemma.lemma_id}}</td>
+                    <td>{{lemma.lemma}}</td>
+                    <td>{{lemma.syllable_structure}}</td>
+                    <td>{{lemma.lang}}</td>
+                    {% if lemma.lemma_diac %}
+                    <td>{{lemma.lemma_diac}}</td>
+                    {% endif %}
+                    {% if lemma.tone %}
+                    <td>{{lemma.tone}}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!--  End Lemma table definition -->
+
+
+        <!-- For English definition -->
+        <table class="table  table-bordered border-dark table-responsive mt-5 caption-top">
+            <caption class="fs-3 text-primary">Table for English Definitions</caption>
+            <thead>
+                <tr>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">defn</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for engdfn in engdfn %}
+                <tr>
+                    <td>{{engdfn.lemma_id}}</td>
+                    <td>{{engdfn.defn}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- End of  English definition  table-->
+
+
+        <!-- For Adverb definition -->
+        <table class="table  table-bordered border-primary table-responsive mt-5 caption-top">
+            <caption class="fs-3 text-warning">Table for Adverbs </caption>
+            <thead>
+                <tr>
+                    <th scope="col">adverb_id</th>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">does_agree</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for adverb in adverb %}
+                <tr>
+                    <td>{{adverb.adverb_id}}</td>
+                    <td>{{adverb.lemma_id}}</td>
+                    <td>{{adverb.does_agree}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <!-- End of  Adverb definition  table-->
+
+
+
+        <!-- For Adjective definition -->
+        <table class="table  table-bordered border-dark table-responsive mt-5 caption-top">
+            <caption class="fs-3 text-success">Table for Adjective </caption>
+            <thead>
+                <tr>
+                    <th scope="col">adjective_id</th>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">position</th>
+                    <th scope="col">doesagree</th>
+                    <th scope="col">isproper</th>
+                    <th scope="col">isprepositional</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for adjective in adjective %}
+                <tr>
+                    <td>{{adjective.adjective_id}}</td>
+                    <td>{{adjective.lemma_id}}</td>
+                    <td>{{adjective.position}}</td>
+                    <td>{{adjective.doesagree}}</td>
+                    <td>{{adjective.isproper}}</td>
+                    <td>{{adjective.isprepositional}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <!-- End of  adjective definition  table-->
+
+
+
+        <!-- For verbs definition -->
+        <table class="table  table-bordered border-primary table-responsive mt-5 caption-top">
+            <caption class="fs-3 text-primary">Table for Verbs </caption>
+            <thead>
+                <tr>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">lang_conjg</th>
+                    <th scope="col">conjugation</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for verb in verb %}
+                <tr>
+                    <td>{{verb.lemma_id}}</td>
+                    <td>{{verb.lang_conjg}}</td>
+                    <td>{{verb.conjugation}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <!-- End of  verb definition  table-->
+
+
+        <!-- For noun definition -->
+        <table class="table  table-bordered border-dark table-responsive mt-5 caption-top">
+            <caption class="fs-3 text-dark">Table for Nouns </caption>
+            <thead>
+                <tr>
+                    <th scope="col">noun_id</th>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">nc_particles</th>
+                    <th scope="col">nc_numerical_pair</th>
+                    {% if noun.nc_numerical %}
+                    <th scope="col">nc_numerical</th>
+                    {% endif %}
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for noun in noun %}
+                <tr>
+                    <td>{{noun.noun_id}}</td>
+                    <td>{{noun.lemma_id}}</td>
+                    <td>{{noun.nc_particles}}</td>
+                    <td>{{noun.nc_numerical_pair}}</td>
+                    {% if noun.nc_numerical %}
+                    <td>{{noun.nc_numerical}}</td>
+                    {% endif %}
+
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <!-- End of  noun definition  table-->
+
+
+        <!-- For POS definition -->
+        <table class="table  table-bordered border-primary table-responsive mt-5 caption-top">
+            <caption class="fs-3 text-warning">Table for POS </caption>
+            <thead>
+                <tr>
+                    <th scope="col">pos_id</th>
+                    <th scope="col">lemma_id</th>
+                    <th scope="col">first_level</th>
+                    <th scope="col">second_level</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for pos in pos %}
+                <tr>
+                    <td>{{pos.pos_id}}</td>
+                    <td>{{pos.lemma_id}}</td>
+                    <td>{{pos.first_level}}</td>
+                    <td>{{pos.second_level }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <!-- End of  POS definition  table-->
+
+    </div>
+    {% endblock %}
+   

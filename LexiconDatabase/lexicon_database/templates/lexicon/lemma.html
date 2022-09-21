@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="my-5 container">Tables in Runyankole - Rukiga Lexicon</h2>
+
+<div class="card container" style="width: 50rem;">
+  <ul class="list-group list-group-flush ">
+    <li class="list-group-item">{{lemma.lemma_id}}</li>
+    <li class="list-group-item">{{lemma.lemma}}</li>
+    <li class="list-group-item">{{lemma.syllable_structure}}</li>
+    <li class="list-group-item">{{lemma.lang}}</li>
+    <li class="list-group-item">{{lemma.lemma_diac}}</li>
+    <li class="list-group-item">{{lemma.tone}}</li>
+  </ul>
+</div>
+
+{% endblock  %}
