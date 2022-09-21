@@ -55,6 +55,8 @@ class Lemma(models.Model):
     class Meta:
         managed = False
         db_table = 'lemma'
+
+        
 class Lemma1(models.Model):
     lemma_id = models.IntegerField(primary_key=True)
     lemma = models.CharField(max_length=100, blank=True, null=True)
